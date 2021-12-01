@@ -22,7 +22,6 @@ This version will be built into the final version of the game
     -Health Mechanic
  
  --Audio and particles
-    -Audio 
     -Particles for gun and enemy death
     
  --GameManager
@@ -31,6 +30,10 @@ This version will be built into the final version of the game
     -Light Sources
     -Switching between levels on score
     -Option choices
+    
+ --Work Completed--
+    -Menu Audio
+    -GameAudio
  
  
  
