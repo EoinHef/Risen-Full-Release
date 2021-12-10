@@ -9,7 +9,7 @@ This version will be built into the final version of the game
  --Level Design:
     -Lighting and materials
     -More levels
-    -More interesting level design
+    
  
  --Models and Animations
     -Characgter Models
@@ -17,12 +17,11 @@ This version will be built into the final version of the game
     
  --Gameplay
     -Difficulty as progresses
-    -Better enemy chase player
-    -Better spawning of enemies(Different enemy types)
+    -Better spawning of enemies
     -Health Mechanic
  
  --Audio and particles
-    -Particles for gun and enemy death
+    -Particles/Audio for gun shots 
     
  --GameManager
     -Better Menu
@@ -34,6 +33,9 @@ This version will be built into the final version of the game
  --Work Completed--
     -Menu Audio
     -GameAudio
+    -Better enemy chase player(Nav Mesh,Nav Mesh Agents and Nav Mesh Obstacles)
+    -Different enemy types
+    -More interesting level design
  
  
  
