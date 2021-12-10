@@ -10,6 +10,7 @@ public class Launcher : MonoBehaviour
     public Transform launcher;
     //Force applied to the bullet once instantiated
     public float fireForce = 500;
+    public float fireRate;
 
 
     // Start is called before the first frame update
@@ -39,7 +40,7 @@ public class Launcher : MonoBehaviour
         //Applying force to the instantiated bullet prefab
         projectileInstance.GetComponent<Rigidbody>().AddForce(transform.forward * fireForce,ForceMode.Impulse);
         //Destroying the bullet prefab after a set period of time
-        Destroy(projectileInstance.gameObject,3f);
+        Destroy(projectileInstance.gameObject,5f);
     }
     
 }

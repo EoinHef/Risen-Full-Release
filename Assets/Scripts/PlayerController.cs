@@ -11,22 +11,42 @@ public class PlayerController : MonoBehaviour
     //Variable for turn speed
     public float turnSpeed = 1.0f;
     //Variable for speed to be applied to the player
-    public float speed = 10.0f;
+    public float speed = 1.0f;
     //Variable to set x bounds
-    private float xRange = 20.0f;
+    private float xRange = 30.0f;
     //Variable to set z bounds
-    private float zRange = 14.0f;
-    
+    private float zRange = 18.0f;
+    public Rigidbody player;
+    private CharacterController controller;
+    private bool groundedPlayer;
+    private Vector3 playerVelocity;
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        controller = gameObject.AddComponent<CharacterController>();
+        player = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        
+        groundedPlayer = controller.isGrounded;
+        if (groundedPlayer && playerVelocity.y < 0)
+        {
+            playerVelocity.y = 0f;
+        }
+        Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        controller.Move(move * Time.deltaTime * speed);
+        
+        if (move != Vector3.zero)
+        {
+            gameObject.transform.forward = move;
+        }
+        
+        controller.Move(playerVelocity * Time.deltaTime);
+        
         //Setting the bounds using x and z range variable
         if (transform.position.x < -xRange)
         {
@@ -47,13 +67,15 @@ public class PlayerController : MonoBehaviour
         {
             transform.position = new Vector3(transform.position.x, transform.position.y,zRange);
         }
+        
         //Capturing input on the vertical axis
-        forwardInput = Input.GetAxis("Vertical");
-        //Applying movement if the horizontal keys are pressed
-        transform.Translate(Vector3.forward * Time.deltaTime * speed * forwardInput);
+        //forwardInput = Input.GetAxis("Vertical");
+        //transform.Translate(Vector3.forward * Time.deltaTime * speed * forwardInput);
+
+
         //Capturing input on the horizontal axis
-        horizontalInput = Input.GetAxis("Horizontal");
+        //horizontalInput = Input.GetAxis("Horizontal");
         //Applying movement if the vertical keys are pressed
-        transform.Rotate(Vector3.up * Time.deltaTime* turnSpeed * horizontalInput);
+        //transform.Rotate(Vector3.up * Time.deltaTime* turnSpeed * horizontalInput);
     }
 }
