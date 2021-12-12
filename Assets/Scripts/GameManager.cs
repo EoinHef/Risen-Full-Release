@@ -49,10 +49,9 @@ public class GameManager : MonoBehaviour
     //Method to end the game if the player has killed all the zombies
     public void ScoreGameOver(int score)
     {
-        if (score == 50)
+        if (score >= 100)
         {
-            restartButton.gameObject.SetActive(true);
-            gameOverText.gameObject.SetActive(true);  
+            SceneManager.LoadScene(2);
         }
     }
     //Using scene manager in a method to reload the scene when reload button pressed

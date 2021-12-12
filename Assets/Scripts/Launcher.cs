@@ -10,8 +10,6 @@ public class Launcher : MonoBehaviour
     public Transform launcher;
     //Force applied to the bullet once instantiated
     public float fireForce = 500;
-    public float fireRate;
-
 
     // Start is called before the first frame update
     void Start()

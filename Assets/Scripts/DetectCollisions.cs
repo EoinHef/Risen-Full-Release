@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class DetectCollisions : MonoBehaviour
 {
     private GameManager gameManager;
+    public GameObject zombieType1;
+    public GameObject zombieType2;
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +20,8 @@ public class DetectCollisions : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-          
+        zombieType1 = GameObject.FindWithTag("Zombie1");
+        zombieType2 = GameObject.FindWithTag("Zombie2");
     }
     //Using on trigger function to govern what happens after collisions
     private void OnTriggerEnter(Collider other)
@@ -33,7 +36,14 @@ public class DetectCollisions : MonoBehaviour
         {
             Destroy(gameObject);
             Destroy(other.gameObject);
-            gameManager.UpDateScore(10);
+            if (gameObject == zombieType1)
+            {
+                gameManager.UpDateScore(10);
+            }
+            else if (gameObject == zombieType2)
+            {
+                gameManager.UpDateScore(20);
+            }
         }
         //Logic for player collisions
         else if (other.gameObject.CompareTag("Player"))

@@ -11,6 +11,9 @@ TagManager:
   - Score
   - GameManager
   - SquareObstacle
+  - Powerup
+  - Zombie1
+  - Zombie2
   layers:
   - Default
   - TransparentFX
