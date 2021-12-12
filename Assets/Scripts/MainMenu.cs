@@ -9,7 +9,7 @@ public class MainMenu : MonoBehaviour
     public Button playButton;
 
     public Button exitButton;
-
+    //Cresting a reference to the first game scene
     public string newGameScene;
     // Start is called before the first frame update
     void Start()

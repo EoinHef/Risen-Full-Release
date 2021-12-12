@@ -17,7 +17,9 @@ public class PlayerController : MonoBehaviour
     private float xRange = 26.0f;
     //Variable to set z bounds
     private float zRange = 18.0f;
+    //Boolean for power up,on or off
     public bool hasPowerUp = false;
+    //Creating a reference to the power indicator object
     public GameObject powerupIndicator;
     
 
@@ -30,7 +32,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        //Setting bounds for the player
         if(transform.position.x < -xRange)       
             {
                 transform.position = new Vector3(-xRange, transform.position.y, transform.position.z);
@@ -50,15 +52,7 @@ public class PlayerController : MonoBehaviour
             {
                 transform.position = new Vector3(transform.position.x, transform.position.y, zRange);
             }
-
-            //Vector3 forwardInput = new Vector3(0, 0, Input.GetAxis("Vertical"));
-            //Vector3 rotateInput = new Vector3(0, Input.GetAxis("Horizontal"),0);
-            
-            //player.MovePosition(transform.position + forwardInput * Time.deltaTime * speed);
-            //player.MovePosition(transform.position + rotateInput * Time.deltaTime * turnSpeed);
-
-
-
+            //Capturing player input to translate to motion
             //Capturing input on the vertical axis
             forwardInput = Input.GetAxis("Vertical");
             transform.Translate(Vector3.forward * Time.deltaTime * speed * forwardInput);
@@ -69,7 +63,7 @@ public class PlayerController : MonoBehaviour
             //Applying movement if the vertical keys are pressed
             transform.Rotate(Vector3.up * Time.deltaTime* turnSpeed * horizontalInput);
     }
-
+    //Logic for powerup to be shown on collision with powerup object,poer up on a timer
     public void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Powerup"))
@@ -80,7 +74,7 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(PowerupCountdownRoutine());
         }
     }
-
+    //Method to govern how long power up stays active
     IEnumerator PowerupCountdownRoutine()
     {
         speed = 12.0f;

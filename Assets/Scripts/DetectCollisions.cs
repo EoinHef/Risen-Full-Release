@@ -7,6 +7,7 @@ using Object = UnityEngine.Object;
 
 public class DetectCollisions : MonoBehaviour
 {
+    //Creating references
     private GameManager gameManager;
     public GameObject zombieType1;
     public GameObject zombieType2;
@@ -21,6 +22,7 @@ public class DetectCollisions : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Finding the fdifferent enemy types
         zombieType1 = GameObject.FindWithTag("Zombie1");
         zombieType2 = GameObject.FindWithTag("Zombie2");
     }
@@ -32,7 +34,7 @@ public class DetectCollisions : MonoBehaviour
         {
             //do Nothing
         }
-        //Logic for bullet prefab collisions
+        //Logic for bullet prefab collisions,up date score with amount based on which zombie hit
         else if(other.gameObject.CompareTag("Bullet"))
         {
             if (gameObject == zombieType1)

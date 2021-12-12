@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
         restartButton.gameObject.SetActive(true);
         gameOverText.gameObject.SetActive(true);
     }
-    //Method to end the game if the player has killed all the zombies
+    //Method to move to scene 2 once player has enough points
     public void ScoreGameOver(int score)
     {
         if (score >= 100)
@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene(2);
         }
     }
-    //Using scene manager in a method to reload the scene when reload button pressed
+    //Using scene manager in a method to reload the first scene when reload button pressed
     public void RestartGame()
     {
         SceneManager.LoadScene(1);

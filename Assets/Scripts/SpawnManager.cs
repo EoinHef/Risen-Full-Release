@@ -14,12 +14,14 @@ public class SpawnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Call to function,sets initial enemies to spawn
         SpawnEnemyWave(2);
     }
 
     // Update is called once per frame
     void Update()
     {
+        //Storing the amount of enemies alive so can use logic to spawn more when certain amount left
         enemyCount = GameObject.FindGameObjectsWithTag("Zombie1");
         enemiesAlive = enemyCount.Length;
         if (enemiesAlive <= 1)
@@ -27,7 +29,7 @@ public class SpawnManager : MonoBehaviour
             SpawnEnemyWave(2);
         }
     }
-
+    //Method to spawn enemies,uses passed interger value to decide how many to spawn,spawn position is set between two bounds
     void SpawnEnemyWave(int enemiesToSpawn)
     {
         for (int i = 0; i < enemiesToSpawn; i++)
