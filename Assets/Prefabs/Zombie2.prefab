@@ -1279,6 +1279,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b57771cf4d4d56342b66f3d75429b611, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zombieType1: {fileID: 2591678055529813108, guid: 5791fcd8e0afebe4daa10cc969b6ea9c, type: 3}
+  zombieType2: {fileID: 6755909165181423037}
 --- !u!1 &6914271004234331057
 GameObject:
   m_ObjectHideFlags: 0

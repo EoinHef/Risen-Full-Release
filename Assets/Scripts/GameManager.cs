@@ -10,12 +10,11 @@ public class GameManager : MonoBehaviour
     //Variable to hold UI elements
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI gameOverText;
-    public TextMeshProUGUI startText;
     public Button restartButton;
-    //Float to use to make a message disappear after a certain time
-    public float timeToDisappear = 1.5f;
     //Variable to hold the value of score for on screen HUD element
     private int score;
+
+    private int score2;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,11 +26,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Logic statement to remove intro message after a set time
-       if(startText.enabled && (Time.time >= timeToDisappear))
-       {
-           startText.enabled = false;
-       }
+        
     }
     //Method to update score for on screen display
     public void UpDateScore(int scoreToAdd)
@@ -57,6 +52,6 @@ public class GameManager : MonoBehaviour
     //Using scene manager in a method to reload the scene when reload button pressed
     public void RestartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(1);
     }
 }

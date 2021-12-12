@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Object = UnityEngine.Object;
 
 public class DetectCollisions : MonoBehaviour
 {
@@ -34,8 +35,6 @@ public class DetectCollisions : MonoBehaviour
         //Logic for bullet prefab collisions
         else if(other.gameObject.CompareTag("Bullet"))
         {
-            Destroy(gameObject);
-            Destroy(other.gameObject);
             if (gameObject == zombieType1)
             {
                 gameManager.UpDateScore(10);
@@ -44,12 +43,15 @@ public class DetectCollisions : MonoBehaviour
             {
                 gameManager.UpDateScore(20);
             }
+            Destroy(gameObject);
+            Destroy(other.gameObject);
         }
+        
         //Logic for player collisions
         else if (other.gameObject.CompareTag("Player"))
         {
             Destroy(gameObject);
-            Destroy(other.gameObject); 
+            Destroy(other.gameObject);
             gameManager.GameOver();
         }
     }
