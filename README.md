@@ -8,17 +8,18 @@ This version will be built into the final version of the game
 
  --Level Design:
     -Lighting and materials
+    -More interesting level design
     -More levels
     
  
  --Models and Animations
     -Characgter Models
-    -Character Animations
+    -Character Animations Player
     
  --Gameplay
     -Difficulty as progresses
     -Better spawning of enemies
-    -Health Mechanic
+    
  
  --Audio and particles
     -Particles/Audio for gun shots 
@@ -28,14 +29,31 @@ This version will be built into the final version of the game
     -Camera,better height
     -Light Sources
     -Switching between levels on score
-    -Option choices
+    -Information option on menu
     
  --Work Completed--
     -Menu Audio
     -GameAudio
     -Better enemy chase player(Nav Mesh,Nav Mesh Agents and Nav Mesh Obstacles)
     -Different enemy types
-    -More interesting level design
+    -Character Animations Zombie
+    
+    
+  --Reference Scripting Sources
+    -Player Controller: Unity Units/Unity Manual
+    -Spawn Manager: Unity Units
+    -Using a child object as a fire point principle: Youtube 
+      -Helped to understand how to instantiate a projectile at the rotation the child object had,critical to making the shooting mechanic work
+    -Nav Mesh: Unity Manual/Youtube video for principles of nav mesh
+      -Nav Mesh Agents for player chase
+      -Build scene,mark objects static,bake scene with static objects. Add nav mesh agent to objects using nav mesh for navigation. 
+      -Tune settings appropriately,speed,animations etc
+    
+    
+  --Reference Assets
+    -Try Audio Pack: Unity Asset Store(Free)
+    -Zombie Model and Animations: Unity Asset Store(Free)
+    -Image for Title Screen:
  
  
  
